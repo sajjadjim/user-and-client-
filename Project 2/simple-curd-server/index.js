@@ -47,7 +47,7 @@ async function run() {
       const result = await usersCollection.findOne(query)
       res.send(result)
      })
-
+//Data Has been here put on the server side 
     app.post('/users', async (req, res) => {
       // console.log("Data ins the server" , req.body)
       const newUser = req.body
