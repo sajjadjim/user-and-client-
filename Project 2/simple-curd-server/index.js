@@ -55,6 +55,24 @@ async function run() {
       res.send(result);
     })
 
+    // update user name and email here ------------------------------------------------
+    app.put('/users/:id' , async(req , res) =>{
+      const id = req.params.id;
+      const filter = {_id : new ObjectId(id)}
+      const user = req.body;
+
+     const updatedDoc ={
+      $set:{
+        name :user.name,
+        email :user.email
+      }
+     }
+      const options = {upsert : true}
+      console.log(user)
+      const result = await usersCollection.updateOne(filter , updatedDoc)
+      res.send(result)
+    })
+
     // id Has been delete Here -
       app.delete('/users/:id' , async(req , res) =>{
       const id =req.params.id

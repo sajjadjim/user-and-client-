@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 const Headder = () => {
     return (
         <div>
-            <h1>First Create Full stact website</h1>
+            <h2>First Create Full stact website</h2>
             <Link to="/">Home</Link>
         </div>
     );
